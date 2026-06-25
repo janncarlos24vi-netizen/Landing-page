@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empaques Lácteos de Colombia - Innovación y Calidad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a3d2a 0%, #0d4f35 50%, #0a3d2a 100%);
+            color: #e5e7eb;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ===== LIQUID GLASS ===== */
+        .glass {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+        }
+
+        /* ===== ANIMACIONES ===== */
+        @keyframes slideDownIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: rgba(7, 30, 24, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            color: #ffffff;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            animation: slideDownIn 0.6s ease-out;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #86efac 0%, #4ade80 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .nav-menu a {
+            position: relative;
+            transition: color 0.3s;
+            color: #cbd5e1;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #4ade80;
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .nav-menu a:hover {
+            color: #86efac;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: #fff;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        body {
+            padding-top: 70px;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(135deg, rgba(10, 61, 42, 0.8) 0%, rgba(13, 79, 53, 0.8) 50%, rgba(7, 30, 24, 0.9) 100%), 
+                        radial-gradient(circle at 20% 50%, rgba(74, 222, 128, 0.1) 0%, transparent 50%);
+            color: #fff;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(74, 222, 128, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(13, 79, 53, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-weight: 300;
+        }
+
+        .badge-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(74, 222, 128, 0.15);
+            color: #86efac;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+            color: #0a3d2a;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(74, 222, 128, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(74, 222, 128, 0.4);
+        }
+
+        /* ===== SECCIONES ===== */
+        section {
+            padding: 5rem 0;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #86efac 0%, #4ade80 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #cbd5e1;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            font-weight: 300;
+        }
+
+        /* ===== QUIÉNES SOMOS ===== */
+        #quienes {
+            background: linear-gradient(180deg, rgba(10, 61, 42, 0) 0%, rgba(13, 79, 53, 0.3) 100%);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .quienes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .quienes-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quienes-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #4ade80 0%, #86efac 100%);
+        }
+
+        .quienes-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+            border-color: rgba(74, 222, 128, 0.3);
+        }
+
+        .quienes-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #86efac;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .quienes-card i {
+            font-size: 2rem;
+            color: #4ade80;
+        }
+
+        .quienes-card p {
+            font-size: 1rem;
+            color: #d1d5db;
+            line-height: 1.8;
+        }
+
+        .valores-box {
+            background: rgba(74, 222, 128, 0.08);
+            border: 1px solid rgba(74, 222, 128, 0.2);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .valores-box p {
+            font-weight: 500;
+            color: #e5e7eb;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* ===== PORTAFOLIO ===== */
+        #portafolio {
+            background: linear-gradient(180deg, rgba(13, 79, 53, 0.3) 0%, rgba(10, 61, 42, 0.5) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .portafolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .portafolio-item {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .portafolio-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(74, 222, 128, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .portafolio-item:hover::before {
+            top: -30%;
+            right: -30%;
+        }
+
+        .portafolio-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(74, 222, 128, 0.3);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .portafolio-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .portafolio-icon {
+            font-size: 2rem;
+            color: #4ade80;
+            width: 50px;
+            height: 50px;
+            background: rgba(74, 222, 128, 0.12);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(74, 222, 128, 0.2);
+        }
+
+        .portafolio-item h4 {
+            font-size: 1.4rem;
+            color: #86efac;
+            margin-bottom: 0.8rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .portafolio-item p {
+            font-size: 0.95rem;
+            color: #d1d5db;
+            line-height: 1.8;
+            flex-grow: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(74, 222, 128, 0.15);
+            color: #86efac;
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            margin-top: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== GALERÍA ===== */
+        .galeria-section {
+            margin-top: 4rem;
+        }
+
+        .galeria-img {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(13, 79, 53, 0.8) 0%, rgba(10, 61, 42, 1) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #4ade80;
+            overflow: hidden;
+            border-radius: 16px;
+        }
+
+        .galeria-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ===== CONTACTO ===== */
+        #contacto {
+            background: linear-gradient(180deg, rgba(13, 79, 53, 0.3) 0%, rgba(10, 61, 42, 0) 100%);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contacto-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .contacto-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #86efac;
+            margin-bottom: 0.5rem;
+        }
+
+        .ubicacion-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .ubicacion-item {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: all 0.3s;
+        }
+
+        .ubicacion-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(74, 222, 128, 0.2);
+        }
+
+        .ubicacion-item i {
+            font-size: 2.5rem;
+            color: #4ade80;
+            margin-bottom: 1rem;
+        }
+
+        .ubicacion-item h4 {
+            font-size: 1.2rem;
+            color: #86efac;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .ubicacion-item p {
+            color: #d1d5db;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .ubicacion-item a {
+            color: #4ade80;
+            text-decoration: underline;
+            transition: color 0.3s;
+        }
+
+        .ubicacion-item a:hover {
+            color: #86efac;
+        }
+
+        .social-link-btn {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 1.5rem;
+            border-radius: 14px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            min-width: 120px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .social-link-btn i {
+            font-size: 1.8rem;
+        }
+
+        .social-link-btn span {
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .social-link-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            border-color: rgba(74, 222, 128, 0.3);
+        }
+
+        /* Colores específicos de cada red social */
+        .social-link-btn.fb {
+            color: #60a5fa;
+        }
+
+        .social-link-btn.fb:hover {
+            background: rgba(96, 165, 250, 0.1);
+            border-color: rgba(96, 165, 250, 0.3);
+        }
+
+        .social-link-btn.ig {
+            color: #f472b6;
+        }
+
+        .social-link-btn.ig:hover {
+            background: rgba(244, 114, 182, 0.1);
+            border-color: rgba(244, 114, 182, 0.3);
+        }
+
+        .social-link-btn.tiktok {
+            color: #a78bfa;
+        }
+
+        .social-link-btn.tiktok:hover {
+            background: rgba(167, 139, 250, 0.1);
+            border-color: rgba(167, 139, 250, 0.3);
+        }
+
+        .social-link-btn.x {
+            color: #e5e7eb;
+        }
+
+        .social-link-btn.x:hover {
+            background: rgba(229, 231, 235, 0.1);
+            border-color: rgba(229, 231, 235, 0.3);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: rgba(7, 30, 24, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            color: #cbd5e1;
+            padding: 2.5rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer a {
+            color: #4ade80;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #86efac;
+        }
+
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        footer h4 {
+            color: #86efac;
+            margin-bottom: 0.8rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: rgba(7, 30, 24, 0.98);
+                padding: 1.5rem 0;
+                gap: 0;
+                text-align: center;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-menu.open {
+                display: flex;
+            }
+
+            .nav-menu a {
+                padding: 1rem;
+                display: block;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero {
+                min-height: 60vh;
+                padding: 3rem 0;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            .social-link-btn {
+                min-width: 100px;
+                padding: 0.8rem 1rem;
+            }
+
+            .social-link-btn i {
+                font-size: 1.5rem;
+            }
+
+            .social-link-btn span {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .badge-container {
+                gap: 0.5rem;
+            }
+
+            .badge {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+
+            .cta-button {
+                padding: 0.9rem 1.8rem;
+                font-size: 0.9rem;
+            }
+
+            .portafolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quienes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <img src="LOGO PAGINA WEB.avif" alt="Logo" style="height: 40px; width: auto; margin-right: 0.5rem;" onerror="this.style.display='none'">
+                <span>EmpaquesLácteos</span>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#quienes">Quiénes somos</a></li>
+                <li><a href="#portafolio">Portafolio</a></li>
+                <li><a href="#galeria">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="inicio">
+        <div class="container hero-content">
+            <h1><i class="fas fa-leaf" style="color: #facc15;"></i> Empaques Lácteos de Colombia</h1>
+            <p>Innovación, sostenibilidad y alta calidad para la industria quesera colombiana</p>
+            <div class="badge-container">
+                <div class="badge"><i class="fas fa-leaf"></i> Eco-Amigable</div>
+                <div class="badge"><i class="fas fa-star"></i> Certificado FDA</div>
+                <div class="badge"><i class="fas fa-award"></i> Premium Quality</div>
+            </div>
+            <div style="margin-top: 2rem;">
+                <button class="cta-button" onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})">
+                    <i class="fas fa-paper-plane"></i> Contáctanos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== QUIÉNES SOMOS ===== -->
+    <section id="quienes">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-handshake" style="color: #facc15;"></i> Quiénes Somos</h2>
+            <p class="section-subtitle">Líderes en la industria de empaques lácteos con compromiso hacia la excelencia</p>
+            
+            <div class="quienes-grid">
+                <div class="quienes-card">
+                    <h3><i class="fas fa-bullseye"></i> Misión</h3>
+                    <p>En empaques lácteos de Colombia SAS nos dedicamos al diseño, fabricación y comercialización de empaques innovadores, sostenibles y de alta calidad para toda la industria agrícola Colombiana, garantizando que nuestros productos ayuden a la preservación y adecuada presentación de la variedad de quesos.</p>
+                </div>
+                <div class="quienes-card">
+                    <h3><i class="fas fa-telescope"></i> Visión</h3>
+                    <p>Seremos reconocidos como una empresa líder en el mercado brindando variedad de empaques para todo el sector agrícola Colombiano, destacándonos por nuestra innovación, calidad, excelencia y compromiso en nuestros procesos.</p>
+                </div>
+            </div>
+
+            <div class="valores-box">
+                <p><i class="fas fa-leaf"></i> Productos de alta calidad que contribuyen a la conservación del medio ambiente, brindando diferentes alternativas de empaque a la industria alimenticia con materiales especiales, resistentes a grasa, humedad, calor y certificados por FDA e ISEGA.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PORTAFOLIO ===== -->
+    <section id="portafolio">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-cube"></i> Portafolio de Soluciones</h2>
+            <p class="section-subtitle">Empaques especializados para cada tipo de producto lácteo</p>
+            
+            <div class="portafolio-grid">
+                <div class="portafolio-item">
+                    <div class="portafolio-header">
+                        <div class="portafolio-icon"><i class="fas fa-filter"></i></div>
+                        <h4>Muselina Neotrims</h4>
+                    </div>
+                    <p>Ideal para la elaboración de lácteos y quesos artesanales. Tejido de alta densidad que garantiza mayor durabilidad, pureza y eficiencia en la preservación natural.</p>
+                    <span class="tag"><i class="fas fa-tag"></i> Artesanales</span>
+                </div>
+
+                <div class="portafolio-item">
+                    <div class="portafolio-header">
+                        <div class="portafolio-icon"><i class="fas fa-seal"></i></div>
+                        <h4>Empaque al Vacío</h4>
+                    </div>
+                    <p>Elimina oxígeno para prevenir moho y prolongar vida útil. Perfecto para quesos duros y semiduros como Parmesano, Cheddar y Gruyère.</p>
+                    <span class="tag"><i class="fas fa-tag"></i> Duros</span>
+                </div>
+
+                <div class="portafolio-item">
+                    <div class="portafolio-header">
+                        <div class="portafolio-icon"><i class="fas fa-wind"></i></div>
+                        <h4>Envases Termoformados (MAP)</h4>
+                    </div>
+                    <p>Mezcla de gases para ralentizar deterioro. Fundamental para quesos blandos y frescos como Mozzarella, queso crema y rayado.</p>
+                    <span class="tag"><i class="fas fa-tag"></i> Blandos</span>
+                </div>
+
+                <div class="portafolio-item">
+                    <div class="portafolio-header">
+                        <div class="portafolio-icon"><i class="fas fa-th"></i></div>
+                        <h4>Bandejas VSP</h4>
+                    </div>
+                    <p>Protege porciones y facilita consumo repetido sin pérdida de frescura. Ideal para quesos loncheados o porcionados.</p>
+                    <span class="tag"><i class="fas fa-tag"></i> Porcionados</span>
+                </div>
+
+                <div class="portafolio-item">
+                    <div class="portafolio-header">
+                        <div class="portafolio-icon"><i class="fas fa-leaf"></i></div>
+                        <h4>Envoltura Cera/Parafinada</h4>
+                    </div>
+                    <p>Permite que el queso "respire" continuando su maduración sin perder demasiada humedad. Excelente para duros y semiduros.</p>
+                    <span class="tag"><i class="fas fa-tag"></i> Maduración</span>
+                </div>
+
+                <div class="portafolio-item">
+                    <div class="portafolio-header">
+                        <div class="portafolio-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h4>Soluciones Personalizadas</h4>
+                    </div>
+                    <p>Empaques resellables, cajas sellables y bolsas especiales para diferentes presentaciones. Diseñamos soluciones a tu medida.</p>
+                    <span class="tag"><i class="fas fa-tag"></i> Custom</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALERÍA DE PRODUCTOS ===== -->
+    <section id="galeria" class="galeria-section">
+        <div class="container">
+            <h2 class="section-title" style="color: #0b2b3f; background: unset; -webkit-text-fill-color: unset; background-clip: unset;"><i class="fas fa-images"></i> Galería de Productos</h2>
+            <p class="section-subtitle">Visualiza nuestras soluciones de empaque</p>
+            
+            <div style="display: grid; gap: 3rem; margin-bottom: 3rem;">
+                <!-- Producto 1 -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+                    <div>
+                        <div class="galeria-img" style="height: 300px; border-radius: 16px;">
+                            <img src="bolsa empaques.avif" alt="Bolsa Empaques" onerror="this.outerHTML=`<i class='fas fa-bag-shopping'></i>`">
+                        </div>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.8rem; color: #0b2b3f; margin-bottom: 1rem;"><i class="fas fa-bag-shopping" style="color: #facc15;"></i> Bolsa Empaques</h3>
+                        <p style="color: #475569; font-size: 1rem; line-height: 1.8; margin-bottom: 1rem;">Empaques versútiles en presentación de bolsa. Perfectos para transportar y almacenar productos lácteos con máxima protección. Ideales para distribución y venta mayorista.</p>
+                        <span class="tag" style="background: #facc15; color: #0b2b3f;"><i class="fas fa-check"></i> Disponible</span>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+                    <div>
+                        <h3 style="font-size: 1.8rem; color: #0b2b3f; margin-bottom: 1rem;"><i class="fas fa-box" style="color: #facc15;"></i> Caja Sellable</h3>
+                        <p style="color: #475569; font-size: 1rem; line-height: 1.8; margin-bottom: 1rem;">Cajas de empaque sellables con diseño robusto. Ideales para presentaciones de queso envasado con protección premium. Protege durante transporte y almacenamiento.</p>
+                        <span class="tag" style="background: #facc15; color: #0b2b3f;"><i class="fas fa-check"></i> Disponible</span>
+                    </div>
+                    <div>
+                        <div class="galeria-img" style="height: 300px; border-radius: 16px;">
+                            <img src="caja sellable emapaque.avif" alt="Caja Sellable" onerror="this.outerHTML=`<i class='fas fa-box'></i>`">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+                    <div>
+                        <div class="galeria-img" style="height: 300px; border-radius: 16px;">
+                            <img src="resellable de empaques.avif" alt="Resellable" onerror="this.outerHTML=`<i class='fas fa-recycle'></i>`">
+                        </div>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.8rem; color: #0b2b3f; margin-bottom: 1rem;"><i class="fas fa-recycle" style="color: #facc15;"></i> Resellable</h3>
+                        <p style="color: #475569; font-size: 1rem; line-height: 1.8; margin-bottom: 1rem;">Soluciones resellables que permiten múltiples usos. Perfectas para productos de consumo frecuente. El cierre hermético garantiza la frescura prolongada.</p>
+                        <span class="tag" style="background: #facc15; color: #0b2b3f;"><i class="fas fa-check"></i> Disponible</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section id="contacto">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-phone-alt"></i> Contacto</h2>
+            <p class="section-subtitle">Nuestro equipo está disponible para atender tus necesidades</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                <div class="contacto-card">
+                    <h3><i class="fas fa-user-circle" style="color: #facc15;"></i> Jann Carlos Villalba</h3>
+                    <p style="font-weight: 600; color: #0b2b3f; margin: 0.5rem 0;">Responsable de Atención</p>
+                    <p style="font-size: 0.9rem; color: #64748b;">Asesoría y consultoría de productos</p>
+                </div>
+            </div>
+
+            <!-- UBICACIÓN -->
+            <div class="ubicacion-section">
+                <div class="ubicacion-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Ubicación</h4>
+                    <p>Cra. 1 #No. 60-00, Bogotá D.C<br>Colombia</p>
+                </div>
+                <div class="ubicacion-item">
+                    <i class="fas fa-phone"></i>
+                    <h4>Teléfono</h4>
+                    <p>+57 (01) 301 32145<br><a href="tel:+573013132145" style="color: #2563eb; text-decoration: underline;">Llamar ahora</a></p>
+                </div>
+                <div class="ubicacion-item">
+                    <i class="fas fa-university"></i>
+                    <h4>Institución</h4>
+                    <p>Universidad Manuela Beltrán<br>Programa de Manipulación de Empaques</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 2rem; text-align: center;">
+                <div>
+                    <h4 style="margin-bottom: 0.8rem;"><i class="fas fa-cube"></i> Productos</h4>
+                    <p style="font-size: 0.85rem;"><a href="#portafolio">Ver Portafolio</a></p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 0.8rem;"><i class="fas fa-users"></i> Equipo</h4>
+                    <p style="font-size: 0.85rem;"><a href="#contacto">Contacto</a></p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 0.8rem;"><i class="fas fa-info-circle"></i> Información</h4>
+                    <p style="font-size: 0.85rem;"><a href="#quienes">Quiénes Somos</a></p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 0.8rem;"><i class="fas fa-share-alt"></i> Redes Sociales</h4>
+                    <p style="font-size: 0.85rem;"><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></p>
+                    <p style="font-size: 0.85rem;"><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></p>
+                    <p style="font-size: 0.85rem;"><a href="https://tiktok.com" target="_blank" rel="noopener">TikTok</a></p>
+                    <p style="font-size: 0.85rem;"><a href="https://x.com" target="_blank" rel="noopener">X</a></p>
+                </div>
+            </div>
+            <hr style="border: none; border-top: 1px solid rgba(255, 255, 255, 0.2); margin: 1.5rem 0;">
+            <p>&copy; 2026 Empaques Lácteos de Colombia SAS · Innovación y Calidad</p>
+            <p style="font-size: 0.85rem; opacity: 0.8;">Jann Carlos Villalba Camargo</p>
+            <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 0.5rem;">Hecho con <i class="fas fa-heart" style="color: #facc15;"></i> para Colombia</p>
+            <p style="font-size: 0.8rem; opacity: 0.5; margin-top: 1rem;">
+                <a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        // ===== MENÚ HAMBURGUESA =====
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('open');
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('open');
+            });
+        });
+
+        // ===== ANIMACIONES AL SCROLL =====
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
